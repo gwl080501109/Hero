@@ -6,11 +6,8 @@ import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.util.AttributeKey;
 import lombok.extern.slf4j.Slf4j;
 import org.tinygame.herostory.cmdHnadler.*;
-import org.tinygame.herostory.model.User;
 import org.tinygame.herostory.model.UserManager;
 
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @ClassName GameMsgHandler
