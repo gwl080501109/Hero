@@ -44,7 +44,7 @@ public final class PackageUtil {
      * @param filter      过滤器
      * @return 符合条件的类集合
      */
-    static public Set<Class<?>> listClazz(
+    static public Set<Class<?>>  listClazz(
         String packageName, boolean recursive, IClazzFilter filter) {
 
         if (packageName == null ||
@@ -75,7 +75,7 @@ public final class PackageUtil {
                 if ("FILE".equalsIgnoreCase(protocol)) {
                     // 从文件系统中加载类
                     tmpSet = listClazzFromDir(
-                        new File(currUrl.getFile()), packageName, recursive, filter
+                        new File(currUrl.getFile().replace("%20"," ")), packageName, recursive, filter
                     );
                 } else if ("JAR".equalsIgnoreCase(protocol)) {
                     // 获取文件字符串
@@ -123,8 +123,7 @@ public final class PackageUtil {
      * @return 符合条件的类集合
      */
     static private Set<Class<?>> listClazzFromDir(
-        final File dirFile, final String packageName, final boolean recursive, IClazzFilter filter) {
-
+         File dirFile, final String packageName, final boolean recursive, IClazzFilter filter) {
         if (!dirFile.exists() ||
             !dirFile.isDirectory()) {
             // 如果参数对象为空,

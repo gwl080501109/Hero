@@ -1,4 +1,4 @@
-package org.tinygame.herostory.cmdHnadler;
+package org.tinygame.herostory.cmdHandler;
 
 import com.google.protobuf.GeneratedMessageV3;
 import io.netty.channel.ChannelHandlerContext;

@@ -1,8 +1,7 @@
-package org.tinygame.herostory.cmdHnadler;
+package org.tinygame.herostory.cmdHandler;
 
 import com.google.protobuf.GeneratedMessageV3;
 import lombok.extern.slf4j.Slf4j;
-import org.tinygame.herostory.msg.GameMsgProtocol;
 import org.tinygame.herostory.util.PackageUtil;
 
 import java.lang.reflect.Method;
@@ -28,6 +27,7 @@ public final class CmdHandlerFactory {
 //        handlerMap.put(GameMsgProtocol.WhoElseIsHereCmd.class, new WhoElseIsHereCmdHandler());
 //        handlerMap.put(GameMsgProtocol.UserMoveToCmd.class, new UserMoveToCmdHandler());
         //拿出当前包下所有实现了ICmdHandler接口的实现类
+        log.info("````````````{}",CmdHandlerFactory.class.getPackage().getName());
         Set<Class<?>> clazzSet = PackageUtil.listSubClazz(CmdHandlerFactory.class.getPackage().getName(), true, ICmdHandler.class);
         for (Class<?> clazz : clazzSet) {
             //过滤掉上面实现类中的接口
@@ -40,7 +40,7 @@ public final class CmdHandlerFactory {
             Method[] methodArray = clazz.getDeclaredMethods();
 
             for (Method currMethod : methodArray) {
-                if (!currMethod.getName().equals("handler")) {
+                if (!currMethod.getName().equals("handle")) {
                     continue;
                 }
                 //获取函数参数类型

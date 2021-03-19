@@ -27,7 +27,6 @@ public class  GameMsgDecoder  extends ChannelInboundHandlerAdapter {
 
         Message.Builder msgBuilder = GameMsgRecognizer.getBuilderByMsgCode(msgCode);
         if (null == msgBuilder) {
-            log.info("builderByMsgCode is null");
             return;
         }
         //拿到消息体
