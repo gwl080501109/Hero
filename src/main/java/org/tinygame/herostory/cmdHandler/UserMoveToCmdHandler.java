@@ -3,7 +3,7 @@ package org.tinygame.herostory.cmdHnadler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.util.AttributeKey;
 import org.tinygame.herostory.Broadcaster;
-import org.tinygame.herostory.GameMsgProtocol;
+import org.tinygame.herostory.msg.GameMsgProtocol;
 
 /**
  * @ClassName UserMoveToCmdHandler

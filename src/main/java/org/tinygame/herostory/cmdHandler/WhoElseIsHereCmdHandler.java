@@ -1,7 +1,7 @@
 package org.tinygame.herostory.cmdHnadler;
 
 import io.netty.channel.ChannelHandlerContext;
-import org.tinygame.herostory.GameMsgProtocol;
+import org.tinygame.herostory.msg.GameMsgProtocol;
 import org.tinygame.herostory.model.User;
 import org.tinygame.herostory.model.UserManager;
 
